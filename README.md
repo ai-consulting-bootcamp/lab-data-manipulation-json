@@ -1,23 +1,13 @@
-# Data Manipulation + JSON Handling
+# Titanic Data Analysis
 
-**Track:** Module 1 — AI basics & Python · **When:** Week 1, Day 4 · **Status:** Required
+## Feature Engineering Explanation
 
-This repository contains everything you need for this lab.
+I created three engineered features: `FamilySize`, `IsAlone`, and `AgeGroup`. These features helped compare survival patterns based on family relationships and passenger age, showing differences between survivors and non-survivors. The `Passenger` and `TitanicDataset` classes organized the processed data and made it easier to export and validate the JSON file.
 
-## Files
+## Results
 
-- [`instructions.md`](./instructions.md) — the lab instructions
-- [`rubric.md`](./rubric.md) — how your submission is graded; this is what the AI reviewer checks your PR against
+The script processed 891 passenger records and exported the results to JSON. JSON validation completed successfully.
 
-## How to complete this lab
+## Visualizations
 
-1. **Fork** this repository.
-2. Do the work described in `instructions.md`, committing to your fork.
-3. Open a **pull request** back into this repository.
-4. You'll receive **AI feedback** on your PR based on `rubric.md`. Address any blocking feedback and push updates to the same PR.
-
-## Submission hygiene
-
-- Keep this repository scoped to this lab only — no unrelated projects or personal files.
-- Use clear, descriptive filenames.
-- Remove secrets, API keys, and tokens before committing.
+Additional charts were created to show survival rates by sex, passenger class, age group, and family size.
