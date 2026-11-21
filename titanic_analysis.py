@@ -5,7 +5,12 @@ from pathlib import Path
 import pandas as pd
 
 carpeta_proyecto = Path(__file__).parent
-archivo_csv = carpeta_proyecto / "data" / "titanic.csv"
+DATA_DIR = carpeta_proyecto / "data"
+DATA_DIR.mkdir(exist_ok=True)
+
+archivo_csv = DATA_DIR / "titanic.csv"
+if not archivo_csv.exists():
+    raise FileNotFoundError(f"No se encontró el archivo CSV: {archivo_csv}")
 
 df = pd.read_csv(archivo_csv)
 
