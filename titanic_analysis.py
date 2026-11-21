@@ -47,8 +47,20 @@ print(matriz_correlacion)
 
 print("\nCorrelación con supervivencia:")
 print(matriz_correlacion["Survived"].sort_values(ascending=False))
+faltantes = pd.DataFrame({
+    "cantidad": df.isna().sum(),
+    "porcentaje": df.isna().mean() * 100,
+})
+
+faltantes = faltantes[faltantes["cantidad"] > 0]
+faltantes = faltantes.sort_values("cantidad", ascending=False)
+
 print("\nValores faltantes por columna:")
-print(df.isna().sum())
+print(faltantes)
+print(
+    f"Columna con más valores faltantes: {faltantes.index[0]} "
+    f"({faltantes.iloc[0]['cantidad']})"
+)
 
 # Crear una variable con el tamaño de la familia a bordo
 df["FamilySize"] = df["SibSp"] + df["Parch"] + 1
