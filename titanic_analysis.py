@@ -24,7 +24,24 @@ for columna in columnas_numericas:
     print(f"Media: {df[columna].mean():.2f}")
     print(f"Mediana: {df[columna].median():.2f}")
     print(f"Desviación estándar: {df[columna].std():.2f}")
+print("\nEstadísticas avanzadas:")
 
+print("\nCuartiles de las columnas numéricas:")
+print(df[columnas_numericas].quantile([0.25, 0.50, 0.75]))
+
+print("\nAsimetría (skewness):")
+print(df[columnas_numericas].skew())
+
+print("\nCurtosis (kurtosis):")
+print(df[columnas_numericas].kurt())
+
+matriz_correlacion = df[columnas_numericas].corr()
+
+print("\nMatriz de correlación:")
+print(matriz_correlacion)
+
+print("\nCorrelación con supervivencia:")
+print(matriz_correlacion["Survived"].sort_values(ascending=False))
 print("\nValores faltantes por columna:")
 print(df.isna().sum())
 
